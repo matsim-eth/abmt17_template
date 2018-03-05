@@ -46,7 +46,7 @@ public class StationReader {
 		List<String> header = null;
 
 		while ((line = reader.readLine()) != null) {
-			List<String> row = Arrays.asList(line.split(";"));
+			List<String> row = Arrays.asList(line.split(","));
 
 			if (header == null) {
 				header = row;

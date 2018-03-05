@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 
+import ch.ethz.matsim.av.electric.RechargingConfig;
+import ch.ethz.matsim.av.electric.calculators.StaticChargeCalculatorConfig;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.contrib.dvrp.run.DvrpConfigGroup;
 import org.matsim.contrib.dvrp.trafficmonitoring.DvrpTravelTimeModule;
@@ -56,7 +58,7 @@ public class RunScenarioExample {
 		String stationsPath = args[1];
 
 		// Load the config file (command line argument)
-		Config config = ConfigUtils.loadConfig(configPath, new DvrpConfigGroup(), new AVConfigGroup());
+		Config config = ConfigUtils.loadConfig(configPath, new DvrpConfigGroup(), new AVConfigGroup(), new RechargingConfig(), new StaticChargeCalculatorConfig());
 
 		Scenario scenario = ScenarioUtils.loadScenario(config); // Load scenario
 		Controler controler = new Controler(scenario); // Set up simulation controller
